@@ -1,0 +1,47 @@
+canvas {
+    display: block;
+    margin: 30px auto;
+    box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9
+}
+
+h1 {
+    text-align: center;
+    color: #e24e08;
+}
+
+.end {
+    margin-left: 35%;
+    width: 450px;
+}
+
+#btn {
+    width: 80px;
+    height: 26px;
+    color: #888888;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    /* margin: 0 auto; */
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    color: black;
+}
+
+.endDetail {
+    text-align: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: #1F1717;
+    /* margin-left: 40%; */
+}
+
+#winner {
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+}
