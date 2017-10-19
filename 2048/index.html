@@ -16,7 +16,15 @@
         <h1>2048小游戏</h1>
         <span class="score">score:<span id="score" class="scoreNum">0</span></span>
         <a href="javascript:newgame();" id="newgamebutton">New Game</a>
-        <p class="tips">tips:用方向键控制</p>
+        <p class="tips">tips:用方向键或者下面的按钮控制
+            <div class="control">
+                <a id="up" title="向上">向上</a>
+                <a id="left" title="向左">向左</a>
+                <a id="right" title="向右">向右</a>
+                <a id="down" title="向下">向下</a>
+            </div>
+        </p>
+
     </header>
 
     <div id="grid-container">
@@ -40,5 +48,6 @@
         <div class="grid-cell" id="grid-cell-3-2"></div>
         <div class="grid-cell" id="grid-cell-3-3"></div>
     </div>
+
 </body>
 <html>

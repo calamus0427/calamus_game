@@ -10,6 +10,7 @@ function newgame(){
 
 	// 初始化棋盘格
 	init();
+	bindClickEvent();
 	// 随机两个格子生成数字
 	generateOneNumber();
 	generateOneNumber();
@@ -138,6 +139,33 @@ $(document).keydown(function(event){
 			break;
 	}
 });
+
+var bindClickEvent = function() {
+	document.onclick = function(e) {
+		var target = e.target.getAttribute("id")
+		if (target === "up") {
+			if(moveUp(board)){
+				generateOneNumber();
+				isgameover();
+			}
+		} else if (target === "right") {
+			if(moveRight(board)){
+				generateOneNumber();
+				isgameover();
+			}
+		} else if (target === "down") {
+			if(moveDown(board)){
+				generateOneNumber();
+				isgameover();
+			}
+		} else if (target === "left") {
+			if(moveLeft(board)){
+				generateOneNumber();
+				isgameover();
+			}
+		}
+	}
+}
 
 function moveLeft(board){
 	if(!canMoveLeft(board))

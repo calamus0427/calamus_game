@@ -30,7 +30,36 @@ header #newgamebutton {
 }
 
 header #newgamebutton:hover {
-    background-color: #9f8b77
+    background-color: #9f8b77;
+    cursor: pointer;
+}
+
+.control {
+    /* 防止快速点击按钮时选中文本 */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+}
+
+.control a {
+    width: 100px;
+    padding: 10px, 10px;
+    background-color: #8f7a66;
+    font-family: Arial;
+    color: white;
+    border-radius: 15px;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 8px;
+    margin-right: 8px;
+}
+
+.control a:hover {
+    background-color: #9f8b77;
+    cursor: pointer;
 }
 
 .score {
@@ -41,8 +70,8 @@ header #newgamebutton:hover {
 
 .scoreNum {
     font-weight: bold;
-    color: #9f8b77;
-    font-size: 28px;
+    color: #ef5404;
+    font-size: 35px;
     padding-left: 5px;
 }
 
