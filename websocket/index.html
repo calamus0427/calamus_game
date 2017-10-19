@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天室</title>
+    <script src="js/socket.io-2.0.3.js"></script>
+</head>
+
+<body>
+    <h1>聊天室</h1>
+    <input type="text" id="sendTxt" />
+    <button id="sendBtn">发送</button>
+    <script>
+        var socket = io("ws://localhost:3000");
+
+        function showMessage(str, type) {
+            var div = document.createElement('div');
+            div.innerHTML = str;
+            if (type == "enter") {
+                div.style.color = "orange"
+            } else if (type == "message") {
+                div.style.color = "black"
+            } else if (type == "leave") {
+                div.style.color = "red"
+            }
+            document.body.appendChild(div);
+        }
+        document.getElementById("sendBtn").onclick = function() {
+                var txt = document.getElementById("sendTxt").value;
+                if (txt) {
+                    socket.emit("message", txt);
+                }
+            }
+            // websocket.onclose = function() {
+            //     console.log('websocket close');
+            // }
+            // websocket.onmessage = function(e) {
+            //     console.log(e.data);
+            //     var mes = JSON.parse(e.data)
+            //     showMessage(mes.data, mes.type);
+            // }
+        socket.on('enter', function(data) {
+            showMessage(data, 'enter');
+        })
+        socket.on('message', function(data) {
+            showMessage(data, 'message');
+        })
+        socket.on('leave', function(data) {
+            showMessage(data, 'leave');
+        })
+    </script>
+</body>
+
+</html>
