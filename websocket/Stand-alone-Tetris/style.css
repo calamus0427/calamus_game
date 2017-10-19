@@ -1,0 +1,146 @@
+html {
+    touch-action: manipulation
+    /* 取消移动端300ms延迟 */
+}
+
+.wrapper {
+    position: relative;
+    width: 335px;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.wrapper ul {
+    line-height: 20px;
+    position: absolute;
+    top: 470px;
+}
+
+.game {
+    width: 200px;
+    height: 400px;
+    background-color: #f2faff;
+    border-left: 1px solid blueviolet;
+    border-right: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+#others {
+    position: absolute;
+    top: 60px;
+    left: 220px;
+}
+
+#click {
+    position: absolute;
+    top: 236px;
+    left: 220px;
+}
+
+#click div {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #484444;
+    color: white;
+    border: 1px solid #484444;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    cursor: pointer;
+    /* 防止快速点击按钮时选中文本 */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+
+/* #click>div:last-child {
+    width: 80px;
+    } */
+
+    #click>div:nth-child(1) {
+        left: 0px;
+        width: 90px;
+    }
+
+    #click>div:nth-child(2) {
+        left: 30px;
+        top: 90px;
+    }
+
+    #click>div:nth-child(3) {
+        left: 0;
+        top: 120px;
+    }
+
+    #click>div:nth-child(4) {
+        top: 120px;
+        left: 60px;
+    }
+
+    #click>div:nth-child(5) {
+        top: 150px;
+        left: 30px;
+    }
+
+    #click>div:nth-child(6) {
+        top: 195px;
+        left: 0;
+        width: 90px;
+    }
+
+    .next {
+        width: 80px;
+        height: 80px;
+        background-color: #f2faff;
+        position: relative;
+    /* top: 20px;
+    left: 260px;  */
+    border: 1px solid blueviolet;
+}
+
+.info div {
+    margin-top: 5px;
+}
+
+#gameOver {
+    margin-top: 6px;
+    color: red;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.none,
+.current,
+.done {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.none {
+    background-color: #f2faff;
+}
+
+.current {
+    background-color: pink;
+    border: 1px solid red;
+}
+
+.done {
+    background-color: gray;
+    border: 1px solid black;
+}
