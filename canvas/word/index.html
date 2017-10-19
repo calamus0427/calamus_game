@@ -27,12 +27,12 @@
     <script src="js/script.js"></script>
     <script>
         var width = Math.min(600, document.documentElement.clientWidth - 20);
-        // var maxLineWidth = 0.5;
+        var maxLineWidth = 30;
         var handWritting = handWritting({
             canvas: document.getElementById('canvas'),
             width: width,
             height: width,
-            // maxLineWidth: maxLineWidth, //最大笔画宽度
+            maxLineWidth: maxLineWidth, //最大笔画宽度
             // minLineWidth: 1, //最小笔画宽度
         });
 
