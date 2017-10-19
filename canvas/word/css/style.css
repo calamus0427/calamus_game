@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 10px;
+}
+
+.write-area {
+    display: block;
+    margin: 0 auto;
+}
+
+.ctrl {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.op-btn {
+    float: right;
+    margin: 10px 0 0 10px;
+    border: 2px solid #aaa;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px 5px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    font-family: 'Microsoft Yahei', Arial;
+}
+
+.op-btn {
+    background-color: #def;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.btn-color {
+    float: left;
+    margin: 10px 10px 0 0;
+    border: 5px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px 5px;
+    cursor: pointer;
+}
+
+.btn-color:hover {
+    border: 5px solid violet;
+}
+
+.btn-color-selected {
+    border: 5px solid blueviolet;
+}
+
+.btn-black {
+    background-color: #000;
+}
+
+.btn-blue {
+    background-color: blue;
+}
+
+.btn-green {
+    background-color: green;
+}
+
+.btn-red {
+    background-color: red;
+}
+
+.btn-orange {
+    background-color: orange;
+}
+
+.btn-yellow {
+    background-color: yellow;
+}

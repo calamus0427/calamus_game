@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 写字</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <canvas id="canvas" class="write-area">
+        你的浏览器不支持canvas
+    </canvas>
+    <div id="controller" class="ctrl">
+        <div class="btn-color btn-color-selected btn-black"></div>
+        <div class="btn-color btn-blue"></div>
+        <div class="btn-color btn-green"></div>
+        <div class="btn-color btn-red"></div>
+        <div class="btn-color btn-orange"></div>
+        <div class="btn-color btn-yellow"></div>
+        <div id="clear-btn" class="op-btn">清除</div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script>
+        var width = Math.min(600, document.documentElement.clientWidth - 20);
+        // var maxLineWidth = 0.5;
+        var handWritting = handWritting({
+            canvas: document.getElementById('canvas'),
+            width: width,
+            height: width,
+            // maxLineWidth: maxLineWidth, //最大笔画宽度
+            // minLineWidth: 1, //最小笔画宽度
+        });
+
+        document
+            .querySelector('#clear-btn')
+            .addEventListener('click', function() {
+                handWritting.clear();
+            }, false);
+        document
+            .querySelectorAll('.btn-color')
+            .forEach(function(v) {
+                v.addEventListener('click', function() {
+                    handWritting.strokeColor = document.defaultView
+                        .getComputedStyle(this, null)
+                        .getPropertyValue('background-color');
+                    document.querySelector('.btn-color-selected')
+                        .classList.remove('btn-color-selected');
+                    this.classList.add('btn-color-selected');
+                    console.log(handWritting.strokeColor);
+                }, false);
+            });
+    </script>
+</body>
+
+</html>
