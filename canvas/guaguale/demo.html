@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        .container {
+            width: 320px;
+            margin: 10px auto 20px auto;
+            min-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <canvas></canvas>
+    </div>
+</body>
+<script>
+    var bodyStyle = document.body.style;
+    bodyStyle.mozUserSelect = 'none';
+    bodyStyle.webkitUserSelect = 'none';
+
+    var img = new Image();
+    var canvas = document.querySelector('canvas');
+    canvas.style.backgroundColor = 'transparent';
+    canvas.style.position = 'absolute';
+    var imgs = [bg_01.jpg, bg_02.jpg];
+    var num = Math.floor(Math.randow() * 2);
+    img.src = imgs[num];
+    img.addEventListener('load', function(e) {
+        var ctx;
+        var w = img.width,
+            h = img.height;
+        var offsetX = canvas.offsetLeft,
+            offsetY = canvas.offsetTop;
+        var mousedown = false;
+
+        function layer(ctx) {
+            ctx.fillStyle = 'gray';
+            ctx.fillRect(0, 0, w, h);
+        };
+
+        function eventDown(e) {
+            e.preventDefault();
+            mousedown = true;
+        };
+
+        function eventUp(e) {
+            e.preventDefault();
+            mousedown = false;
+        };
+
+        function eventMove(e) {
+            e.preventDefault();
+            if (mousedown) {
+                if (e.changeTouches) {
+                    e = e.changedTouches[e.changedTouches.length - 1];
+                }
+            };
+            var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0;
+            var y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        canvas.width = w;
+        canvas.height = h;
+        canvas.style.backgroundImage = 'url(' + img.src + ')';
+        ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'transparent';
+        ctx.fillRect(0, 0, w, h);
+        layer(ctx);
+        ctx.globalCompositeOperation = 'destination-out';
+        canvas.addEventListener('touchstart', eventDown);
+        canvas.addEventListener('touchend', eventUp);
+        canvas.addEventListener('touchmove', eventMove);
+        canvas.addEventListener('mousedown', eventDown);
+        canvas.addEventListener('mouseup', eventUp);
+        canvas.addEventListener('mousemove', eventMove);
+
+
+    });
+</script>
+
+</html>
