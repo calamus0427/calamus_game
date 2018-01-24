@@ -29,7 +29,7 @@ Element.prototype.ScratchCard = function(t){
                 page_y = epy-s.offsetTop;
                 context.lineTo( page_x,page_y );
                 context.stroke();
-                context.lineWidth = Math.floor(h / 4);
+                context.lineWidth = Math.floor(h / 3);
             }
         },
         end = function(e){
