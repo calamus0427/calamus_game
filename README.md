@@ -7,6 +7,7 @@
 - ## canvas小游戏
     - [evan-you](https://calamus0427.github.io/game/canvas/evan-you)
     - [guaguale](https://calamus0427.github.io/game/canvas/guaguale/demo1/)
+        <font color=gray size=5>刮刮乐游戏</font>
     - [globule](https://calamus0427.github.io/game/canvas/globule)
     - [heart](https://calamus0427.github.io/game/canvas/heart)
     - [look-def-color](https://calamus0427.github.io/game/canvas/look-def-color)
