@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>刮刮乐</title>
+    <title>东边的山坡上有两头牛</title>
+    <script src="./font/iconfont.js"></script>
     <style lang="css">
         h1 {
             text-align: center;
@@ -13,6 +14,20 @@
         
         div {
             margin: 0 auto;
+        }
+        
+        .icon {
+            width: 2em;
+            height: 2em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        
+        .showMusic {
+            position: absolute;
+            right: 5px;
+            top: 5px;
         }
         
         .noselect {
@@ -39,12 +54,25 @@
     </style>
 </head>
 
-<body>
-    <h1>刮刮乐</h1>
+<body class="noselect">
+    <div class="showMusic">
+        <a onclick="showMusic()" title="显示列表">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#l-erji2"></use>
+            </svg>
+        </a>
+        <audio id="audio" src="红牛.mp3" controls loop></audio>
+    </div>
+
     <script src="./scratchcard.js"></script>
     <script src="./content.json"></script>
     <script>
+        var music = document.getElementById('audio');
+
         window.onload = function() {
+            music.style.visibility = 'hidden';
+            music.play();
+            playMusic();
             for (let i = 0; i < content.length; i++) {
                 var Odiv = document.createElement("div");
                 Odiv.id = "div" + i;
@@ -52,6 +80,14 @@
                 document.body.appendChild(Odiv);
                 Odiv.ScratchCard(content[i]);
             }
+        }
+
+        function playMusic() {
+            music.play();
+        }
+
+        function showMusic() {
+            music.style.visibility = music.style.visibility == 'visible' ? 'hidden' : 'visible';
         }
     </script>
 </body>
