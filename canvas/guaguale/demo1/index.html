@@ -23,12 +23,11 @@
             fill: currentColor;
             overflow: hidden;
         }
-        
-        .showMusic {
+        /* .showMusic {
             position: absolute;
             right: 5px;
             top: 5px;
-        }
+        } */
         
         .noselect {
             -webkit-touch-callout: none;
@@ -55,8 +54,8 @@
 </head>
 
 <body class="noselect">
-    <div class="showMusic">
-        <a onclick="showMusic()" title="显示列表">
+    <div class="musicList">
+        <a class="showMusic" onclick="showMusic()" title="显示列表">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#l-erji2"></use>
             </svg>
